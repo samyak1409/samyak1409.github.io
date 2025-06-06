@@ -1,21 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; URL='https://django-blog.koyeb.app'">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Blog</title>
-  </head>
-  <body>
-    <h1>
-      Redirecting to <a style="text-decoration: none" href="https://django-blog.koyeb.app">Django Blog</a>...
-    </h1>
-    <h2>
-      This may take a few seconds on the first visit due to server cold start.
-    </h2>
-    <script>
-      // Fallback JS redirect (in case meta tag fails)
-      window.location.replace("https://django-blog.koyeb.app");
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <!-- Non-JS redirect for when JS is disabled: -->
+<!--  <meta http-equiv="refresh" content="0; URL='https://django-blog.koyeb.app'">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      color: #f0f0f0;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 1.25rem;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 5px solid #444;
+      border-top-color: rgb(0,95,255);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1.25rem;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    a {
+      color: rgb(0,95,255);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <h1>
+    Redirecting to <a class="redirect-link" href="#">Django Blog</a>... Please wait
+  </h1>
+  <h2>
+    This may take a few seconds on the first visit due to server cold start.
+  </h2>
+  <p>If you are not redirected automatically, <a class="redirect-link" href="#">click here</a>.</p>
+  <script>
+    // If URL = "https://example.com/django-blog/api1?query=123#top"
+    // location.pathname = "/django-blog/api1"
+    const target = "https://django-blog.koyeb.app" + location.pathname.replace("/django-blog", "");
+    // Dynamically assign both the links:
+    document.querySelectorAll('.redirect-link').forEach(link => {
+      link.href = target;
+    });
+    // Redirect:
+    // window.location.replace(target);
+  </script>
+</body>
 </html>
