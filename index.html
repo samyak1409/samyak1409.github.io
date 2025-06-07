@@ -1,18 +1,366 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samyak Jain | Python Backend Developer</title>
 
-    <title>Portfolio - Samyak Jain</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS for OLED Theme & Modern Look -->
     <link rel="stylesheet" href="styles.css">
-
 </head>
-<body>
 
-    <img class="wip" src="https://64.media.tumblr.com/54935756324d11ffe663133fce769654/tumblr_mhcoodLwjY1rlw32xo1_500.gif" alt="WORK IN PROGRESS... THANKS">
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
 
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Samyak Jain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1 class="display-4 mb-3">Samyak Jain</h1>
+            <p class="lead mb-4">Python Backend Developer | LeetCode Knight | Problem Solver</p>
+            <div class="social-links mb-4">
+                <a href="mailto:samyak65400@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/samyak1409" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/samyak1409" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://leetcode.com/samyak1409" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                <a href="tel:+918079000479" target="_blank" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-custom job">
+                        <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
+                           <h3>Software Engineer (Python Backend)</h3>
+                           <span class="company-date">RapidKen.AI, Bengaluru (Remote) | Apr 2023 – Present</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Engineered a robust system of 600+ lines of clean Python to extract key moments from YouTube descriptions — handling 10+ edge cases and employing advanced DSA techniques.</li>
+                            <li>Initiated and led the adoption of PEP 8 into project-wide code guidelines, reducing technical debt and improving collaboration for a 5-member team.</li>
+                            <li>Reduced SLOC and manual effort by identifying and replacing a suboptimal file format with the ideal one.</li>
+                            <li>Detected and resolved a critical bug in the first week, leading to a 10% performance improvement.</li>
+                            <li>Refactored 1K+ lines of legacy code to align with PEP 8 standards, significantly improving code readability.</li>
+                            <li>Automated a manual task, saving 2+ hours/week by writing a script that leverages Set data structures.</li>
+                            <li>Corrected and standardized malformed HTML heading tags using custom regex.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="col-md-12">
+                    <div class="card-custom job">
+                        <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
+                           <h3>Data Collection and Analytics Intern</h3>
+                           <span class="company-date">Research Institute, Austin (Remote) | Jan 2022 – Apr 2022</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Built 20+ efficient Python scripts to extract blockchain and cryptocurrency data from static and dynamic websites.</li>
+                            <li>Utilized multithreading to make fetching millions of transactions feasible, reducing runtime by an incredible 99%.</li>
+                            <li>Maintained a high-quality, comprehensive GitHub repository with clean code and detailed documentation.</li>
+                            <li>Earned a full-time Research Associate offer at the prestigious Indian School of Business (ISB) in recognition of exceptional performance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                 <button id="summarizeExperienceBtn" class="btn btn-primary">✨ Summarize My Experience</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card-custom project h-100" data-project-name="Django Blog">
+                        <h3>Django Blog</h3>
+                        <ul class="project-details">
+                            <li>Developed a full-stack blog website with Django, featuring user registration, authentication, CRUD operations, and email-based password reset.</li>
+                            <li>Designed a responsive, minimalistic OLED-black UI using HTML, CSS, and Bootstrap with custom pagination.</li>
+                            <li>Added a public RESTful API with read-only access to blog posts, using Django REST framework.</li>
+                            <li>Followed DRY principle to cut redundancy by inheriting from class-based views and templates.</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                           <a href="https://samyak1409.github.io/django-blog" class="btn btn-outline-light me-2" target="_blank">Live Site</a>
+                           <a href="https://github.com/samyak1409/django" class="btn btn-outline-light me-2" target="_blank">GitHub</a>
+                           <button class="btn btn-primary elaborate-project-btn mt-2 mt-md-0">✨ Elaborate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card-custom project h-100" data-project-name="Minesweeper Desktop App">
+                        <h3>Minesweeper</h3>
+                         <ul class="project-details">
+                            <li>Engineered a 2K+ LOC production-ready desktop game based on Minesweeper, built from scratch using Python, Tkinter, and SQLite.</li>
+                            <li>Built a custom game engine with randomized mine placement and a recursive flood-fill algorithm for tile reveals.</li>
+                            <li>Developed features like secure best-time records with anti-cheat, difficulty modes, color theming, and a custom game variant.</li>
+                            <li>Designed and integrated a 300+ line fully automatic in-app update system.</li>
+                        </ul>
+                         <div class="mt-auto pt-3">
+                           <a href="https://github.com/samyak1409/Minesweeper-for-PC" class="btn btn-outline-light me-2" target="_blank">GitHub</a>
+                           <button class="btn btn-primary elaborate-project-btn mt-2 mt-md-0">✨ Elaborate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                 <div class="col-md-6 mb-4">
+                    <div class="card-custom project h-100" data-project-name="Online Class Attendance Automator">
+                        <h3>Online Class Attendance Automator</h3>
+                         <ul class="project-details">
+                            <li>Developed a Python script during COVID-19 to automate daily online class attendance into a single Excel sheet, saving a teacher 3 to 6 hours/week.</li>
+                            <li>Implemented actionable attendance analytics, configurable attendance rules, and bulk test data generation.</li>
+                        </ul>
+                         <div class="mt-auto pt-3">
+                           <a href="https://github.com/samyak1409/online-class-attendance-automator" class="btn btn-outline-light me-2" target="_blank">GitHub</a>
+                           <button class="btn btn-primary elaborate-project-btn mt-2 mt-md-0">✨ Elaborate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="card-custom">
+                <ul>
+                    <li>Earned the prestigious <strong>Knight Badge</strong> on LeetCode, ranking in the Top 2.5% of 400K+ global participants.</li>
+                    <li>Achieved <strong>AIR-110</strong> (Global: 611/22,419) in LeetCode Weekly Contest 339.</li>
+                    <li>Solved <strong>460+</strong> coding problems across various platforms, primarily on LeetCode.</li>
+                    <li>Ranked <strong>#250 globally</strong> (top 0.005%) among 5M+ users by reputation on LeetCode for high-quality solution articles.</li>
+                    <li>Qualified for TCS CodeVita Season 10 Round 2 as one of only 5 qualifiers from the college.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skills-table">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr><td>Programming Languages</td><td>Python (Proficient), Java & C++ (Familiar)</td></tr>
+                        <tr><td>Backend & Databases</td><td>Django, Django REST framework, RESTful APIs, MySQL, SQLite</td></tr>
+                        <tr><td>Code Quality</td><td>Data Structures & Algorithms, PEP 8, Code Refactoring, Automation</td></tr>
+                        <tr><td>Tools & Libraries</td><td>Git, GitHub, PyCharm, Selenium, Requests, Beautiful Soup, OpenPyXl</td></tr>
+                        <tr><td>Frontend</td><td>UX, HTML, CSS, Bootstrap, Tkinter</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card-custom text-center">
+                 <h3>B.Tech, Computer Science & Engineering</h3>
+                 <p class="company-date mb-0">JECRC Foundation, Jaipur (RTU) | 2018 – 2022</p>
+                 <p class="lead mt-1">8 CGPA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="mailto:samyak65400@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/samyak1409" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/samyak1409" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://leetcode.com/samyak1409" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+            </div>
+            <p>&copy; 2024 Samyak Jain. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Gemini AI Result Modal -->
+    <div class="modal fade" id="geminiResultModal" tabindex="-1" aria-labelledby="geminiResultModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="geminiResultModalLabel">✨ AI Generated Content</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="geminiResultBody">
+              <!-- AI content will be injected here -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Gemini API Interaction Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const summarizeExperienceBtn = document.getElementById('summarizeExperienceBtn');
+            const elaborateProjectBtns = document.querySelectorAll('.elaborate-project-btn');
+            const geminiModal = new bootstrap.Modal(document.getElementById('geminiResultModal'));
+            const geminiResultBody = document.getElementById('geminiResultBody');
+            const geminiModalLabel = document.getElementById('geminiResultModalLabel');
+
+            const apiKey = ""; // API Key is not needed for gemini-2.0-flash
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            // Function to show loading state on a button
+            function showLoading(button) {
+                button.disabled = true;
+                const originalText = button.innerHTML;
+                button.dataset.originalText = originalText;
+                button.innerHTML = '<span class="loading-spinner"></span> Generating...';
+            }
+
+            // Function to hide loading state on a button
+            function hideLoading(button) {
+                button.disabled = false;
+                button.innerHTML = button.dataset.originalText || 'Action';
+            }
+
+            // Generic function to call the Gemini API
+            async function callGeminiAPI(prompt) {
+                const payload = {
+                    contents: [{ role: "user", parts: [{ text: prompt }] }]
+                };
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        console.error('Gemini API Error:', errorData);
+                        return `<strong>Error:</strong> ${errorData.error?.message || response.statusText}. Please check the browser console for more details.`;
+                    }
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        let text = result.candidates[0].content.parts[0].text;
+                        // Basic sanitization and formatting
+                        text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                        text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
+                        text = text.replace(/\*(.*?)\*/g, '<em>$1</em>'); // Italics
+                        return text.replace(/\n/g, '<br>');
+                    } else {
+                        console.error('Unexpected response structure:', result);
+                        return "Received an unexpected response from the AI. Please check the console.";
+                    }
+                } catch (error) {
+                    console.error('Fetch Error:', error);
+                    return "Failed to connect to the AI service. Please check your network connection and try again.";
+                }
+            }
+
+            // Activate scrollspy
+            const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+                target: '#navbar',
+                offset: 80
+            });
+
+
+            // Event listener for "Summarize My Experience" button
+            if (summarizeExperienceBtn) {
+                summarizeExperienceBtn.addEventListener('click', async () => {
+                    showLoading(summarizeExperienceBtn);
+                    geminiModalLabel.textContent = '✨ AI Generated Experience Summary';
+
+                    const experienceElements = document.querySelectorAll('#experience .job');
+                    let experienceText = "My professional experience is as follows:\n\n";
+                    experienceElements.forEach(job => {
+                        const jobTitle = job.querySelector('h3').innerText;
+                        const companyDate = job.querySelector('.company-date').innerText;
+                        experienceText += `Role: ${jobTitle} at ${companyDate}\nKey Responsibilities/Achievements:\n`;
+                        job.querySelectorAll('.experience-details li').forEach(li => {
+                            experienceText += `- ${li.innerText}\n`;
+                        });
+                        experienceText += "\n";
+                    });
+
+                    const prompt = `Based on the following experience details, provide a concise and impactful summary (around 2-3 paragraphs) of Samyak Jain's professional experience. Highlight key skills like Python development, code optimization, automation, and problem-solving, making it suitable for a portfolio overview. Write in the first person.`;
+
+                    const summary = await callGeminiAPI(prompt);
+                    geminiResultBody.innerHTML = summary;
+                    geminiModal.show();
+                    hideLoading(summarizeExperienceBtn);
+                });
+            }
+
+            // Event listeners for "Elaborate on Project" buttons
+            elaborateProjectBtns.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    showLoading(btn);
+
+                    const projectDiv = btn.closest('.project');
+                    const projectName = projectDiv.dataset.projectName || projectDiv.querySelector('h3').innerText;
+                    geminiModalLabel.textContent = `✨ AI Elaboration for: ${projectName}`;
+
+                    const projectDetailsList = projectDiv.querySelector('.project-details');
+                    let projectText = `Project: ${projectName}\nDetails:\n`;
+                    if (projectDetailsList) {
+                        projectDetailsList.querySelectorAll('li').forEach(li => {
+                            projectText += `- ${li.innerText}\n`;
+                        });
+                    }
+
+                    const prompt = `Please elaborate on the following project titled "${projectName}". Expand on the provided details, highlighting the technical challenges, solutions implemented, key skills demonstrated (like Python, Django, Tkinter, problem-solving, etc.), and the overall impact or learning from the project. Present it in a narrative and engaging way suitable for a portfolio (2-3 paragraphs). Write in the first person, as if you are the developer explaining your work.`;
+
+                    const elaboration = await callGeminiAPI(prompt);
+                    geminiResultBody.innerHTML = elaboration;
+                    geminiModal.show();
+                    hideLoading(btn);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
