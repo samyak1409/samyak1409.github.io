@@ -2,10 +2,10 @@
     --oled-black: #000000;
     --light-gray: #e0e0e0;
     --medium-gray: #a0a0a0;
-    --accent-color: #007bff;
-    --accent-hover: #0056b3;
+    --accent-color: #8A2BE2;
+    --accent-hover: #6A0DAD;
     --card-bg: #121212;
-    --card-border: #222;
+    --card-border: #222222;
 }
 
 body {
@@ -109,7 +109,7 @@ section:last-of-type {
     color: var(--accent-color);
 }
 
-.card-custom .company-date {
+.card-custom .heading-secondary {
     color: var(--medium-gray);
     font-weight: 600;
 }
@@ -134,11 +134,18 @@ section:last-of-type {
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-table:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
 }
 
 .skills-table td {
     padding: 15px;
     color: var(--light-gray);
+    background-color: var(--card-bg);
 }
 
 .skills-table tr:not(:last-child) td {
@@ -147,7 +154,7 @@ section:last-of-type {
 
 .skills-table td:first-child {
     font-weight: 700;
-    color: #ffffff;
+    color: var(--accent-color);
     width: 30%;
 }
 
@@ -209,4 +216,19 @@ footer {
     border-right-color: transparent;
     border-radius: 50%;
     animation: spinner-border .75s linear infinite;
+}
+
+/* Heart animation */
+.heart {
+    display: inline-block;
+    animation: pulse 1s infinite;
+    transform-origin: center;
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
 }

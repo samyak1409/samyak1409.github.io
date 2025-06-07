@@ -1,1 +1,3 @@
-[GitHub Pages](https://pages.github.com) - Websites for you and your projects.
+# Portfolio Website
+
+[samyak1409.github.io](https://samyak1409.github.io)
