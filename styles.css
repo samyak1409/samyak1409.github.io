@@ -15,6 +15,14 @@ body {
     scroll-behavior: smooth;
 }
 
+.colored-text {
+    color: var(--accent-color);
+}
+
+.faded-text {
+    color: rgb(255, 255, 255, 0.1); /* white 10% opaque */
+}
+
 .navbar {
     background-color: rgba(18, 18, 18, 0.85);
     backdrop-filter: blur(10px);
@@ -190,23 +198,30 @@ footer {
     border: 1px solid var(--card-border);
     color: var(--light-gray);
 }
+
 .modal-header {
-     border-bottom: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
+
 .modal-header .btn-close {
     filter: invert(1);
 }
+
 .modal-footer {
     border-top: 1px solid var(--card-border);
 }
+
 #geminiResultBody {
     line-height: 1.8;
 }
 
 /* Loading Spinner for Gemini Button */
 @keyframes spinner-border {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 .loading-spinner {
     display: inline-block;
     width: 1rem;
@@ -224,6 +239,7 @@ footer {
     animation: pulse 1s infinite;
     transform-origin: center;
 }
+
 @keyframes pulse {
     0%, 100% {
         transform: scale(.8);
