@@ -108,9 +108,9 @@ section:last-of-type {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-custom:hover {
+.card-custom:hover, .skills-table:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.25);  /* --accent-hover 25% */
 }
 
 .card-custom h3 {
@@ -130,11 +130,6 @@ section:last-of-type {
 .card-custom ul li a {
     color: var(--accent-color);
     text-decoration: none;
-    font-weight: 600;
-}
-
-.card-custom ul li a:hover {
-    text-decoration: underline;
 }
 
 .skills-table {
@@ -143,11 +138,6 @@ section:last-of-type {
     overflow: hidden;
     border: 1px solid var(--card-border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skills-table:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
 }
 
 .skills-table td {
@@ -167,8 +157,8 @@ section:last-of-type {
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
     font-weight: 600;
     padding: 10px 25px;
     border-radius: 50px;
@@ -176,8 +166,8 @@ section:last-of-type {
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
+    background-color: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
 }
 
 .btn-outline-light {
