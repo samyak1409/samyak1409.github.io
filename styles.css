@@ -110,7 +110,7 @@ section:last-of-type {
 
 .card-custom:hover, .skills-table:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.25);  /* --accent-hover 25% */
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.25); /* --accent-hover 25% */
 }
 
 .card-custom h3 {
