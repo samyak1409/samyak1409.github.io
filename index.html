@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+<body data-bs-spy="scroll" data-bs-target="#navbar">
 
 <!-- Navigation -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -456,7 +456,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -533,13 +533,6 @@
                 return "Failed to connect to the AI service. Please check your network connection and try again.";
             }
         }
-
-        // Activate scrollspy
-        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-            target: '#navbar',
-            offset: 80
-        });
-
 
         // Event listener for "Summarize My Experience" button
         if (summarizeExperienceBtn) {

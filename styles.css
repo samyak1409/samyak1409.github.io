@@ -1,11 +1,15 @@
 :root {
+    /* https://coolors.co/color-picker */
+    /* https://coolors.co/808080: */
     --oled-black: #000000;
-    --light-gray: #e0e0e0;
-    --medium-gray: #a0a0a0;
-    --accent-color: #8A2BE2;
-    --accent-hover: #6A0DAD;
     --card-bg: #121212;
-    --card-border: #222222;
+    --card-border: #242424;
+    --medium-gray: #808080;
+    --light-gray: #BFBFBF;
+    --off-white: #E4E4E4;
+    /* https://coolors.co/8000ff: */
+    --accent-color: #8000FF;
+    --accent-hover: #6400C8;
 }
 
 body {
@@ -40,7 +44,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: #ffffff;
+    color: var(--off-white);
 }
 
 section {
@@ -148,12 +152,19 @@ a {
     border-bottom-color: rgb(224 224 224 / 50%); /* --light-gray */
 }
 
-/* Overriding bootstrap btn class to make it rounder. */
+/* Overriding bootstrap btn class to change color & make it rounder. */
 .btn {
+    color: currentColor;
+    border-color: currentColor;
     font-weight: 600;
     padding: 8px 20px;
     border-radius: 50px;
+}
 
+.btn:hover {
+    color: var(--card-bg);
+    border-color: var(--light-gray);
+    background-color: var(--light-gray);
 }
 
 /* Overriding bootstrap primary btn class to change the color to our theme color. */
@@ -165,6 +176,7 @@ a {
 .btn-primary:hover {
     background-color: var(--accent-hover) !important;
     border-color: var(--accent-hover) !important;
+    color: currentColor;
 }
 
 footer {
