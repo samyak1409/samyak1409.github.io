@@ -32,3 +32,26 @@ a {
     color: var(--accent-color);
     text-decoration: none;
 }
+
+#delay-msg h2, p {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+#delay-msg h2 {
+    animation-delay: 3s;
+    margin-bottom: 3rem;
+}
+
+#delay-msg p {
+    animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

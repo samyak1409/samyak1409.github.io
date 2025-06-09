@@ -6,7 +6,7 @@
     <!-- Non-JS redirect for when JS is disabled: -->
     <meta http-equiv="refresh" content="0; URL='https://django-blog.koyeb.app'">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+    <link rel="stylesheet" href="styles.css">
     <!-- Favicon (used https://realfavicongenerator.net): -->
     <link rel="icon" type="image/png" href="../favicons/favicon-96x96.png" sizes="96x96"/>
     <link rel="icon" type="image/svg+xml" href="../favicons/favicon.svg"/>
@@ -14,18 +14,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png"/>
     <meta name="apple-mobile-web-app-title" content="Samyak"/>
     <link rel="manifest" href="../favicons/site.webmanifest"/>
-
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="spinner"></div>
 <h1>
     Redirecting to <a href="https://django-blog.koyeb.app">Django Blog</a>... Please wait
 </h1>
-<h2>
-    This may take a few seconds on the first visit due to server cold start.
-</h2>
-<p>If you are not redirected automatically, <a href="https://django-blog.koyeb.app">click here</a>.</p>
+<div id="delay-msg">
+    <h2>
+        This may take a few seconds on the first visit due to server cold start.
+    </h2>
+    <p>
+        If you are not redirected automatically, <a href="https://django-blog.koyeb.app">click here</a>.
+    </p>
+</div>
 <script>
     // Redirect:
     window.location.replace(target);
