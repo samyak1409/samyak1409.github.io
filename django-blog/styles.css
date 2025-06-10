@@ -38,13 +38,17 @@ a {
     animation: fadeIn 1s ease-in forwards;
 }
 
+/* At first, only h1 would be shown, and after some time, if redirection has still not occurred,
+implies the server is waking up from the sleep, and so then only show h2.
+Also improves the UX from not showing all the info in the start only, because if the server is already awake,
+redirection would be completed in ~3-5 seconds only, then visitor would not be able to read and so kind of bad UX. */
 #delay-msg h2 {
-    animation-delay: 3s;
+    animation-delay: 5s;
     margin-bottom: 3rem;
 }
 
 #delay-msg p {
-    animation-delay: 4s;
+    animation-delay: 6s;
 }
 
 @keyframes fadeIn {
