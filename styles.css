@@ -185,6 +185,10 @@ footer {
     text-align: center;
 }
 
+footer p {
+    color: var(--medium-gray);
+}
+
 /* Heart animation */
 .heart {
     display: inline-block;
