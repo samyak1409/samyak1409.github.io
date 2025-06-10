@@ -19,16 +19,36 @@ body {
     scroll-behavior: smooth;
 }
 
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+/* Hides the link color, and adds subtle dotted line instead. */
+.subtle-link {
+    border-bottom: 2px dotted rgb(191 191 191 / 25%); /* --light-gray */
+    transition: border-bottom-color 0.3s ease;
+}
+
+.subtle-link:hover {
+    border-bottom-color: rgb(191 191 191 / 50%); /* --light-gray */
+}
+
+/* Adds a beautiful glow effect to the text with the same color of text. */
+.glow {
+    text-shadow: 0 0 1rem;
+}
+
 .colored-text {
     color: var(--accent-color);
 }
 
 .faded-text {
-    color: rgb(255 255 255 / 10%); /* white */
+    color: rgb(228 228 228 / 10%); /* white */
 }
 
 .navbar {
-    background-color: rgb(18 18 18 / 90%); /* --card-bg */
+    background-color: rgb(18 18 18 / 80%); /* --card-bg */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -66,11 +86,6 @@ section:last-of-type {
 
 #home h1 {
     font-size: 3.5rem;
-}
-
-/* Adds a beautiful glow effect to the text with the same color of text. */
-.glow {
-    text-shadow: 0 0 1rem;
 }
 
 #home p {
@@ -120,7 +135,7 @@ section:last-of-type {
 
 .card-custom:hover {
     transform: scale(1.01);
-    box-shadow: 0 10px 20px rgb(106 13 173 / 25%); /* --accent-hover */
+    box-shadow: 0 10px 20px rgb(100 0 200 / 25%); /* --accent-hover */
 }
 
 .card-custom h3 {
@@ -135,21 +150,6 @@ section:last-of-type {
 
 .card-custom ul li {
     margin-bottom: 10px;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* Hides the link color, and adds subtle dotted line instead. */
-.subtle-link {
-    color: currentColor;
-    border-bottom: 2px dotted rgb(224 224 224 / 25%); /* --light-gray */
-    transition: border-bottom-color 0.3s ease;
-}
-
-.subtle-link:hover {
-    border-bottom-color: rgb(224 224 224 / 50%); /* --light-gray */
 }
 
 /* Overriding bootstrap btn class to change color & make it rounder. */
@@ -183,46 +183,6 @@ footer {
     background-color: var(--card-bg);
     padding: 40px 0;
     text-align: center;
-}
-
-/* Gemini Modal & Button styles */
-.modal-content {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--light-gray);
-}
-
-.modal-header {
-    border-bottom: 1px solid var(--card-border);
-}
-
-.modal-header .btn-close {
-    filter: invert(1);
-}
-
-.modal-footer {
-    border-top: 1px solid var(--card-border);
-}
-
-#geminiResultBody {
-    line-height: 1.8;
-}
-
-/* Loading Spinner for Gemini Button */
-.loading-spinner {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border: 0.2em solid currentColor;
-    border-right-color: transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 /* Heart animation */

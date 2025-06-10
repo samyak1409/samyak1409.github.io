@@ -33,10 +33,10 @@
 <!-- Navigation -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand glow" href="#">
-            <span class="faded-text">print('</span>Samyak<span class="colored-text">.</span><span
-                class="faded-text">')</span>
-        </a>
+        <span class="navbar-brand">
+            <span class="faded-text">print('</span><a class="glow" href="#">Samyak<span
+                class="colored-text">.</span></a><span class="faded-text">')</span>
+        </span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -185,9 +185,6 @@
                 </li>
             </ul>
         </div>
-        <div class="text-center mt-4">
-            <button id="summarizeExperienceBtn" class="btn btn-primary">✨ Summarize My Experience</button>
-        </div>
     </div>
 </section>
 
@@ -243,11 +240,10 @@
                     </li>
                 </ul>
                 <div class="mt-auto mb-3">
-                    <a href="/django-blog" class="btn btn-outline-light me-2 mt-2"
+                    <a href="/django-blog" class="btn btn-primary me-2 mt-2"
                        target="_blank">Live Site</a>
                     <a href="https://github.com/samyak1409/django" class="btn btn-outline-light me-2 mt-2"
                        target="_blank">GitHub</a>
-                    <button class="btn btn-primary elaborate-project-btn mt-2">✨ Elaborate</button>
                 </div>
             </div>
             <!-- Project 2 -->
@@ -287,13 +283,12 @@
                 <div class="mt-auto mb-3">
                     <a href="https://github.com/samyak1409/Minesweeper-for-PC" class="btn btn-outline-light me-2 mt-2"
                        target="_blank">GitHub</a>
-                    <button class="btn btn-primary elaborate-project-btn mt-2">✨ Elaborate</button>
                 </div>
             </div>
             <!-- Project 3 -->
             <div class="card-custom project">
                 <h3>Online Class Attendance Automator</h3>
-                <span class="heading-secondary">Python Script</span>
+                <span class="heading-secondary">Python Software</span>
                 <ul class="project-details mt-3">
                     <li>Developed a software during COVID-19 to automate daily online class attendance into a single
                         Excel sheet for my father, a teacher, saving 5 to 10 minutes per 60-minute class previously
@@ -312,7 +307,6 @@
                 <div class="mt-auto mb-3">
                     <a href="https://github.com/samyak1409/online-class-attendance-automator"
                        class="btn btn-outline-light me-2 mt-2" target="_blank">GitHub</a>
-                    <button class="btn btn-primary elaborate-project-btn mt-2">✨ Elaborate</button>
                 </div>
             </div>
         </div>
@@ -441,28 +435,6 @@
     </div>
 </footer>
 
-<!-- Gemini AI Result Modal -->
-<div class="modal fade" id="geminiResultModal" tabindex="-1" aria-labelledby="geminiResultModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="geminiResultModalLabel">✨ AI Generated Content</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="geminiResultBody">
-                    <!-- AI content will be injected here -->
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -472,121 +444,21 @@
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
 
-<!-- Gemini API Interaction Script -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const summarizeExperienceBtn = document.getElementById('summarizeExperienceBtn');
-        const elaborateProjectBtns = document.querySelectorAll('.elaborate-project-btn');
-        const geminiModal = new bootstrap.Modal(document.getElementById('geminiResultModal'));
-        const geminiResultBody = document.getElementById('geminiResultBody');
-        const geminiModalLabel = document.getElementById('geminiResultModalLabel');
+    // When recruiters visit my portfolio, send a GET request (at '/wake-up' endpoint) to each of my deployed backend projects which are on free tier, and hence could be sleeping, in order to reduce wait time if they visit the deployed project next.
+    const deployedProjects = [
+        'https://django-blog.koyeb.app/wake-up',
+        'https://samyak1409-django-blog.onrender.com/wake-up'
+    ];  // Add future backend projects as well here.
 
-        const apiKey = ""; // API Key is not needed for gemini-2.0-flash
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-        // Function to show loading state on a button
-        function showLoading(button) {
-            button.disabled = true;
-            const originalText = button.innerHTML;
-            button.dataset.originalText = originalText;
-            button.innerHTML = '<span class="loading-spinner"></span> Generating...';
-        }
-
-        // Function to hide loading state on a button
-        function hideLoading(button) {
-            button.disabled = false;
-            button.innerHTML = button.dataset.originalText || 'Action';
-        }
-
-        // Generic function to call the Gemini API
-        async function callGeminiAPI(prompt) {
-            const payload = {
-                contents: [{role: "user", parts: [{text: prompt}]}]
-            };
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(payload)
-                });
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    console.error('Gemini API Error:', errorData);
-                    return `<strong>Error:</strong> ${errorData.error?.message || response.statusText}. Please check the browser console for more details.`;
-                }
-                const result = await response.json();
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    let text = result.candidates[0].content.parts[0].text;
-                    // Basic sanitization and formatting
-                    text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
-                    text = text.replace(/\*(.*?)\*/g, '<em>$1</em>'); // Italics
-                    return text.replace(/\n/g, '<br>');
-                } else {
-                    console.error('Unexpected response structure:', result);
-                    return "Received an unexpected response from the AI. Please check the console.";
-                }
-            } catch (error) {
-                console.error('Fetch Error:', error);
-                return "Failed to connect to the AI service. Please check your network connection and try again.";
-            }
-        }
-
-        // Event listener for "Summarize My Experience" button
-        if (summarizeExperienceBtn) {
-            summarizeExperienceBtn.addEventListener('click', async () => {
-                showLoading(summarizeExperienceBtn);
-                geminiModalLabel.textContent = '✨ AI Generated Experience Summary';
-
-                const experienceElements = document.querySelectorAll('#experience .job');
-                let experienceText = "My professional experience is as follows:\n\n";
-                experienceElements.forEach(job => {
-                    const jobTitle = job.querySelector('h3').innerText;
-                    const companyDate = job.querySelector('.heading-secondary').innerText;
-                    experienceText += `Role: ${jobTitle} at ${companyDate}\nKey Responsibilities/Achievements:\n`;
-                    job.querySelectorAll('.experience-details li').forEach(li => {
-                        experienceText += `- ${li.innerText}\n`;
-                    });
-                    experienceText += "\n";
-                });
-
-                const prompt = `Based on the following experience details, provide a concise and impactful summary (around 2-3 paragraphs) of Samyak Jain's professional experience. Highlight key skills like Python development, code optimization, automation, and problem-solving, making it suitable for a portfolio overview. Write in the first person.`;
-
-                const summary = await callGeminiAPI(prompt);
-                geminiResultBody.innerHTML = summary;
-                geminiModal.show();
-                hideLoading(summarizeExperienceBtn);
-            });
-        }
-
-        // Event listeners for "Elaborate on Project" buttons
-        elaborateProjectBtns.forEach(btn => {
-            btn.addEventListener('click', async () => {
-                showLoading(btn);
-
-                const projectDiv = btn.closest('.project');
-                const projectName = projectDiv.dataset.projectName || projectDiv.querySelector('h3').innerText;
-                geminiModalLabel.textContent = `✨ AI Elaboration for: ${projectName}`;
-
-                const projectDetailsList = projectDiv.querySelector('.project-details');
-                let projectText = `Project: ${projectName}\nDetails:\n`;
-                if (projectDetailsList) {
-                    projectDetailsList.querySelectorAll('li').forEach(li => {
-                        projectText += `- ${li.innerText}\n`;
-                    });
-                }
-
-                const prompt = `Please elaborate on the following project titled "${projectName}". Expand on the provided details, highlighting the technical challenges, solutions implemented, key skills demonstrated (like Python, Django, Tkinter, problem-solving, etc.), and the overall impact or learning from the project. Present it in a narrative and engaging way suitable for a portfolio (2-3 paragraphs). Write in the first person, as if you are the developer explaining your work.`;
-
-                const elaboration = await callGeminiAPI(prompt);
-                geminiResultBody.innerHTML = elaboration;
-                geminiModal.show();
-                hideLoading(btn);
-            });
-        });
+    deployedProjects.forEach(url => {
+        fetch(url, {
+            method: 'GET',
+            mode: 'no-cors'  // avoids CORS errors since we don't need to read responses.
+        }).catch(() => {
+        });  // prevents console noise if any server is unreachable or slow.
     });
 </script>
+
 </body>
 </html>
