@@ -24,6 +24,9 @@
     <meta name="apple-mobile-web-app-title" content="Samyak"/>
     <link rel="manifest" href="favicons/site.webmanifest"/>
 
+    <!-- AOS Animations (https://michalsnik.github.io/aos): -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Custom CSS for OLED Theme & Modern Look -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -32,7 +35,7 @@
 
 <!-- Navigation -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+    <div class="container" data-aos="fade-down" data-aos-duration="1000">
         <span class="navbar-brand">
             <span class="faded-text">print('</span><a class="glow" href="#">Samyak<span
                 class="colored-text">.</span></a><span class="faded-text">')</span>
@@ -56,7 +59,7 @@
 
 <!-- Home Section -->
 <section id="home">
-    <div class="container">
+    <div class="container" data-aos="zoom-in" data-aos-duration="1000">
         <h1 class="mb-3"><span class="colored-text">Samyak</span> Jain 🚀</h1>
         <p class="lead mb-1">Software Engineer 👨‍💻 | LeetCode Knight 🛡️ (Top 2.5% | Rating: 2024)</p>
         <p class="lead mb-4">Python | Django | Clean Code Advocate | CSE'22</p>
@@ -87,7 +90,7 @@
     <div class="container">
         <h2 class="section-title"><span class="section-title-text">Experience</span> 💼</h2>
         <!-- Job 1 -->
-        <div class="card-custom job mb-4">
+        <div class="card-custom job mb-4" data-aos="fade-up" data-aos-duration="1000">
             <div class="d-flex justify-content-between flex-wrap align-items-baseline mb-3">
                 <div>
                     <h3>Software Engineer (Python Backend)</h3>
@@ -143,7 +146,7 @@
             </ul>
         </div>
         <!-- Job 2 -->
-        <div class="card-custom job">
+        <div class="card-custom job" data-aos="fade-up" data-aos-duration="1000">
             <div class="d-flex justify-content-between flex-wrap align-items-baseline mb-3">
                 <div>
                     <h3>Data Collection and Analytics Intern</h3>
@@ -194,7 +197,7 @@
         <h2 class="section-title"><span class="section-title-text">Projects</span> 💻</h2>
         <div>
             <!-- Project 1 -->
-            <div class="card-custom project mb-4">
+            <div class="card-custom project mb-4" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Django Blog</h3>
                 <span class="heading-secondary">Web App</span>
                 <ul class="project-details mt-3">
@@ -247,7 +250,7 @@
                 </div>
             </div>
             <!-- Project 2 -->
-            <div class="card-custom project mb-4">
+            <div class="card-custom project mb-4" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Minesweeper</h3>
                 <span class="heading-secondary">Desktop App</span>
                 <ul class="project-details mt-3">
@@ -286,7 +289,7 @@
                 </div>
             </div>
             <!-- Project 3 -->
-            <div class="card-custom project">
+            <div class="card-custom project" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Online Class Attendance Automator</h3>
                 <span class="heading-secondary">Python Software</span>
                 <ul class="project-details mt-3">
@@ -317,7 +320,7 @@
 <section id="achievements">
     <div class="container">
         <h2 class="section-title"><span class="section-title-text">Achievements</span> 🏆</h2>
-        <div class="card-custom">
+        <div class="card-custom" data-aos="fade-up" data-aos-duration="1000">
             <ul>
                 <li class="mt-2 mb-4">Earned the prestigious Knight Badge on LeetCode, ranking in the <a
                         class="colored-text"
@@ -367,7 +370,7 @@
 <section id="skills">
     <div class="container">
         <h2 class="section-title"><span class="section-title-text">Skills</span> 🧠</h2>
-        <div class="card-custom text-center">
+        <div class="card-custom text-center" data-aos="fade-up" data-aos-duration="1000">
             <div class="border-bottom border-dark mb-3">
                 <h3>Programming Languages</h3>
                 <p class="heading-secondary">Python (Proficient), Java & C++ (Familiar)</p>
@@ -396,7 +399,7 @@
 <section id="education">
     <div class="container">
         <h2 class="section-title"><span class="section-title-text">Education</span> 🎓</h2>
-        <div class="card-custom text-center">
+        <div class="card-custom text-center" data-aos="fade-up" data-aos-duration="1000">
             <h3>B.Tech, Computer Science & Engineering</h3>
             <p class="heading-secondary">
                 <a class="subtle-link" href="https://jecrcfoundation.com" target="_blank" rel="noopener noreferrer">JECRC
@@ -465,6 +468,12 @@
         }).catch(() => {
         });  // prevents console noise if any server is unreachable or slow.
     });
+</script>
+
+<!-- AOS Animations (https://michalsnik.github.io/aos): -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
 
 </body>
