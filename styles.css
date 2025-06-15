@@ -51,6 +51,8 @@ a {
     background-color: rgb(18 18 18 / 80%); /* --card-bg */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .navbar-brand, .nav-link {
