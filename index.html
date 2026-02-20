@@ -97,18 +97,17 @@
                     <span class="heading-secondary mt-1">Dec 2025 – Present</span>
                 </div>
                 <ul class="experience-details">
-                    <li>
-                        Building the backend for the UPM (User Profile Management) module of the UBI (Unified Banking
-                        Interface) platform for Bandhan Bank — one of India’s largest private sector banks — from
-                        scratch.
+                    <li>Architecting and building the User Profile Management (UPM) module from scratch for Bandhan
+                        Bank's Unified Banking Interface, managing employee lifecycle across 50K–100K users and 10K+
+                        branches.</li>
+                    <li>Designed a unified request-state engine supporting Creation, Modification (permanent/temporary),
+                        Activation, and Deactivation workflows with JSON-based payload modelling and backward-compatible
+                        migrations.</li>
+                    <li>Implemented maker–checker approval system with strict validation, conflict detection, and atomic
+                        DB transactions to ensure compliance-grade consistency.</li>
+                    <li>Built a temporary privilege engine with cron-based activation/reversion, and state snapshotting.
                     </li>
-                    <li>
-                        Designed and implemented the database schema and RESTful APIs in Go using Gin and Ent for
-                        employee profile retrieval and update workflows.
-                    </li>
-                    <li>
-                        Implemented a maker–checker (four-eye principle) approval flow for profile updates to meet
-                        banking compliance requirements.
+                    <li>Developed RBAC middleware, paginated/filterable APIs, and audit-ready Excel/PDF export systems.
                     </li>
                 </ul>
             </div>
@@ -394,7 +393,8 @@
                 </div>
                 <div class="border-bottom border-dark mb-3">
                     <h3>Backend Development</h3>
-                    <p class="heading-secondary">Django, Django REST framework, Gin, Ent, Celery, Pytest, Locust, Silk, Redis</p>
+                    <p class="heading-secondary">Django, Django REST framework, Gin, Ent, Celery, Pytest, Locust, Silk,
+                        Redis</p>
                 </div>
                 <div class="border-bottom border-dark mb-3">
                     <h3>Databases</h3>
