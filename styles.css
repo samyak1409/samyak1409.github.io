@@ -12,11 +12,15 @@
     --accent-hover: #6400C8;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* so anchor targets aren't hidden behind the fixed navbar */
+}
+
 body {
     background-color: var(--oled-black);
     color: var(--light-gray);
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
 }
 
 a {

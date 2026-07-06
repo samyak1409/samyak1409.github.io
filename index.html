@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Samyak Jain</title>
+    <meta name="description" content="Portfolio of Samyak Jain — Backend Developer (Python, Django, Go) and LeetCode Knight.">
+    <meta name="theme-color" content="#000000">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -267,7 +269,7 @@
                     <div class="mt-auto mb-3">
                         <a href="/django-blog" class="btn btn-primary me-2 mt-2" target="_blank">Live Site</a>
                         <a href="https://github.com/samyak1409/django" class="btn btn-outline-light me-2 mt-2"
-                            target="_blank">GitHub</a>
+                            target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
                 <!-- Project 2 -->
@@ -303,7 +305,7 @@
                     </ul>
                     <div class="mt-auto mb-3">
                         <a href="https://github.com/samyak1409/Minesweeper-for-PC"
-                            class="btn btn-outline-light me-2 mt-2" target="_blank">GitHub</a>
+                            class="btn btn-outline-light me-2 mt-2" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
                 <!-- Project 1 -->
@@ -321,7 +323,7 @@
                     </ul>
                     <div class="mt-auto mb-3">
                         <a href="https://github.com/samyak1409/online-class-attendance-automator"
-                            class="btn btn-outline-light me-2 mt-2" target="_blank">GitHub</a>
+                            class="btn btn-outline-light me-2 mt-2" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -472,6 +474,18 @@
     <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+    <!-- Close the mobile navbar menu after a nav link is clicked: -->
+    <script>
+        document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarNav = document.getElementById('navbarNav');
+                if (navbarNav.classList.contains('show')) {
+                    bootstrap.Collapse.getOrCreateInstance(navbarNav).hide();
+                }
+            });
+        });
     </script>
 
     <script>
