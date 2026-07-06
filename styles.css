@@ -13,6 +13,7 @@
 }
 
 html {
+    color-scheme: dark; /* render native UI (scrollbars, form controls) dark to match the theme */
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* so anchor targets aren't hidden behind the fixed navbar */
 }
@@ -214,5 +215,15 @@ footer p {
     }
     50% {
         transform: scale(1.2);
+    }
+}
+
+/* Respect the user's reduced-motion preference (https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion): */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .heart {
+        animation: none;
     }
 }
