@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Only the portfolio itself is listed; /django-blog, /django-blog/api, and /phone are noindexed redirect pages. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://samyak1409.github.io/</loc>
+        <!-- Keep in sync with the last content change to the portfolio: -->
+        <lastmod>2026-07-07</lastmod>
+    </url>
+</urlset>

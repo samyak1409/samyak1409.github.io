@@ -33,7 +33,7 @@ a {
     text-decoration: none;
 }
 
-#delay-msg h2, p {
+#delay-msg h2, #delay-msg p {
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
 }

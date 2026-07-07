@@ -5,15 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone - Samyak Jain</title>
+    <!-- Utility redirect page, not meant for search results: -->
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#000000">
     <!-- Redirect: -->
     <meta http-equiv="refresh" content="0;url=tel:+918079000479">
+    <link rel="icon" type="image/png" href="../favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../favicons/favicon.svg">
+    <!-- Google Fonts: Poppins (only the bold weight; that's all this page uses) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <!-- Inline styles (colors from styles.css): -->
+    <style>
+        body {
+            background-color: #000000; /* --oled-black */
+            color: #BFBFBF; /* --light-gray */
+            font-family: 'Poppins', system-ui, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        a {
+            color: #8000FF; /* --accent-color */
+        }
+    </style>
 </head>
 
 <body>
     <!-- Backup: clickable link, if browser blocks `tel:` protocol redirection: -->
-    <h1 style="margin:0; height:100vh; display: flex; justify-content: center; align-items: center">
-        <a href="tel:+918079000479">+91 80790-00479</a>
-    </h1>
+    <main>
+        <h1><a href="tel:+918079000479">+91 80790-00479</a></h1>
+    </main>
 </body>
 
 </html>
